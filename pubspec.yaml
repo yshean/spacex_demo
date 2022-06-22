@@ -20,6 +20,8 @@ dependencies:
     path: packages/rocket_repository
   spacex_api:
     path: packages/spacex_api
+  spacex_ui:
+    path: packages/spacex_ui
 
 dev_dependencies:
   bloc_test: ^9.0.3
@@ -31,5 +33,3 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
-  assets:
-    - lib/app_ui/assets/images/

@@ -24,7 +24,10 @@ class HomePageContent extends StatelessWidget {
                 // TODO(yshean): onTap: () => Navigator.of(context).push(RocketsPage.route())
                 onTap: () {},
                 title: Text(l10n.rocketSpaceXTileTitle),
-                imageUrl: 'lib/app_ui/assets/images/img_spacex_rocket.jpeg',
+                assetImage: const AssetImage(
+                  'assets/images/img_spacex_rocket.jpeg',
+                  package: 'spacex_ui',
+                ),
               ),
             ),
           ),
@@ -39,7 +42,10 @@ class HomePageContent extends StatelessWidget {
                 // TODO(yshean): onTap needs to do () => Navigator.of(context).push(CrewPage.route())
                 onTap: () {},
                 title: Text(l10n.crewSpaceXTileTitle),
-                imageUrl: 'lib/app_ui/assets/images/img_spacex_crew.jpeg',
+                assetImage: const AssetImage(
+                  'assets/images/img_spacex_crew.jpeg',
+                  package: 'spacex_ui',
+                ),
               ),
             ),
           ),

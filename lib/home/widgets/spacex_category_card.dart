@@ -5,12 +5,12 @@ class SpaceXCategoryCard extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.title,
-    required this.imageUrl,
+    required this.assetImage,
   });
 
   final VoidCallback onTap;
   final Widget title;
-  final String imageUrl;
+  final AssetImage assetImage;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class SpaceXCategoryCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: borderRadius,
         image: DecorationImage(
-          image: AssetImage(imageUrl),
+          image: assetImage,
           fit: BoxFit.cover,
         ),
       ),
