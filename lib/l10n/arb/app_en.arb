@@ -3,5 +3,17 @@
     "counterAppBarTitle": "Counter",
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
-    }
+    },
+    "homeAppBarTitle": "SpaceX Demo",
+    "@homeAppBarTitle": {
+      "description": "Text shown in the AppBar of the Home Page"
+    },
+    "rocketSpaceXTileTitle": "Rockets",
+	"@rocketSpaceXTileTitle": {
+		"description": "Text included as title on the rockets tile on the home page"
+	},
+	"crewSpaceXTileTitle": "Crew",
+	"@crewSpaceXTileTitle": {
+		"description": "Text included as title on the crew tile on the home page"
+	}
 }

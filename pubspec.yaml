@@ -8,12 +8,18 @@ environment:
 
 dependencies:
   bloc: ^8.0.3
+  crew_member_repository:
+    path: packages/crew_member_repository
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
+  rocket_repository:
+    path: packages/rocket_repository
+  spacex_api:
+    path: packages/spacex_api
 
 dev_dependencies:
   bloc_test: ^9.0.3
@@ -25,3 +31,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - lib/app_ui/assets/images/
