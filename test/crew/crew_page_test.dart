@@ -62,7 +62,7 @@ void main() {
       crewCubit = MockCrewCubit();
       navigator = MockNavigator();
 
-      when(() => navigator.push(any(that: isRoute<void>())))
+      when(() => navigator.push<void>(any(that: isRoute<void>())))
           .thenAnswer((_) async {});
     });
 
@@ -81,7 +81,7 @@ void main() {
       await tester.pumpApp(
         BlocProvider.value(
           value: crewCubit,
-          child: const CrewPageView(),
+          child: const CrewView(),
         ),
       );
 
@@ -102,7 +102,7 @@ void main() {
         await tester.pumpApp(
           BlocProvider.value(
             value: crewCubit,
-            child: const CrewPageView(),
+            child: const CrewView(),
           ),
         );
 
@@ -124,7 +124,7 @@ void main() {
         await tester.pumpApp(
           BlocProvider.value(
             value: crewCubit,
-            child: const CrewPageView(),
+            child: const CrewView(),
           ),
         );
 
@@ -148,7 +148,7 @@ void main() {
           await tester.pumpApp(
             BlocProvider.value(
               value: crewCubit,
-              child: const CrewPageView(),
+              child: const CrewView(),
             ),
           );
         });
@@ -171,7 +171,7 @@ void main() {
           await tester.pumpApp(
             BlocProvider.value(
               value: crewCubit,
-              child: const CrewPageView(),
+              child: const CrewView(),
             ),
             navigator: navigator,
           );

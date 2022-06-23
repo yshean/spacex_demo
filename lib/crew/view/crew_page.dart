@@ -22,13 +22,13 @@ class CrewPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => CrewCubit(context.read<CrewMemberRepository>())
         ..fetchAllCrewMembers(),
-      child: const CrewPageView(),
+      child: const CrewView(),
     );
   }
 }
 
-class CrewPageView extends StatelessWidget {
-  const CrewPageView({super.key});
+class CrewView extends StatelessWidget {
+  const CrewView({super.key});
 
   @override
   Widget build(BuildContext context) {
