@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:spacex_demo/crew/crew.dart';
+import 'package:spacex_demo/crew/cubit/crew_cubit.dart';
 
 class CrewMembersList extends StatelessWidget {
   const CrewMembersList({super.key});

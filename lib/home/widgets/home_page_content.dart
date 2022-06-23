@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spacex_demo/crew/crew.dart';
-import 'package:spacex_demo/home/home.dart';
+import 'package:spacex_demo/home/widgets/widgets.dart';
 import 'package:spacex_demo/l10n/l10n.dart';
 
 class HomePageContent extends StatelessWidget {

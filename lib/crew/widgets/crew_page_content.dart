@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:spacex_demo/crew/crew.dart';
+import 'package:spacex_demo/crew/cubit/crew_cubit.dart';
+import 'package:spacex_demo/crew/widgets/widgets.dart';
 import 'package:spacex_demo/l10n/l10n.dart';
 
 /// Show the fetched crew members list based on the fetch status
