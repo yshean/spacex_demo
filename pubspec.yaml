@@ -9,7 +9,12 @@ environment:
 dependencies:
   bloc: ^8.0.3
   crew_member_repository:
-    path: packages/crew_member_repository
+    # Clone every own packages into packages/ and use local path
+    # if you want to make changes
+    # path: packages/crew_member_repository
+    git:
+      url: https://github.com/yshean/crew_member_repository.git
+      ref: main # branch name
   equatable: ^2.0.3
   flutter:
     sdk: flutter
@@ -18,11 +23,15 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   rocket_repository:
-    path: packages/rocket_repository
-  spacex_api:
-    path: packages/spacex_api
+    # path: packages/rocket_repository
+    git:
+      url: https://github.com/yshean/rocket_repository.git
+      ref: main
   spacex_ui:
-    path: packages/spacex_ui
+    # path: packages/spacex_ui
+    git:
+      url: https://github.com/yshean/spacex_ui.git
+      ref: main
   url_launcher: ^6.1.4
 
 dev_dependencies:

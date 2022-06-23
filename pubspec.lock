@@ -95,9 +95,11 @@ packages:
   crew_member_repository:
     dependency: "direct main"
     description:
-      path: "packages/crew_member_repository"
-      relative: true
-    source: path
+      path: "."
+      ref: main
+      resolved-ref: "0f631426a3d4ef11e0f039e738a77b62e054bd53"
+      url: "https://github.com/yshean/crew_member_repository.git"
+    source: git
     version: "1.0.0+1"
   crypto:
     dependency: transitive
@@ -346,9 +348,11 @@ packages:
   rocket_repository:
     dependency: "direct main"
     description:
-      path: "packages/rocket_repository"
-      relative: true
-    source: path
+      path: "."
+      ref: main
+      resolved-ref: c46a766a9320969f75b263ad00c13eebdcf39210
+      url: "https://github.com/yshean/rocket_repository.git"
+    source: git
     version: "1.0.0+1"
   shelf:
     dependency: transitive
@@ -405,18 +409,22 @@ packages:
     source: hosted
     version: "1.8.2"
   spacex_api:
-    dependency: "direct main"
+    dependency: transitive
     description:
-      path: "packages/spacex_api"
-      relative: true
-    source: path
+      path: "."
+      ref: main
+      resolved-ref: "1f9de7e6f887058baca9a9e4dc227c2eef35be52"
+      url: "https://github.com/yshean/spacex_api.git"
+    source: git
     version: "1.0.0+1"
   spacex_ui:
     dependency: "direct main"
     description:
-      path: "packages/spacex_ui"
-      relative: true
-    source: path
+      path: "."
+      ref: main
+      resolved-ref: "4e13ae1347ab79fd72525d92769b3c583c36aace"
+      url: "https://github.com/yshean/spacex_ui.git"
+    source: git
     version: "1.0.0+1"
   stack_trace:
     dependency: transitive
