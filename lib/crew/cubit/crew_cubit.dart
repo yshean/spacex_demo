@@ -6,7 +6,9 @@ import 'package:spacex_api/spacex_api.dart';
 part 'crew_state.dart';
 
 class CrewCubit extends Cubit<CrewState> {
-  CrewCubit() : super(const CrewState());
+  CrewCubit(this._crewMemberRepository) : super(const CrewState());
+
+  final CrewMemberRepository _crewMemberRepository;
 
   Future<void> fetchAllCrewMembers() async {
     emit(
@@ -17,10 +19,7 @@ class CrewCubit extends Cubit<CrewState> {
     );
 
     try {
-      final crewMembers = await Future.delayed(
-        const Duration(seconds: 3),
-        () => <CrewMember>[],
-      );
+      final crewMembers = await _crewMemberRepository.fetchAllCrewMembers();
       emit(
         CrewState(
           status: CrewStatus.success,

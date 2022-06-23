@@ -9,6 +9,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:crew_member_repository/crew_member_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 
@@ -26,17 +27,28 @@ class AppBlocObserver extends BlocObserver {
   }
 }
 
-Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
+Future<void> bootstrap(
+  FutureOr<Widget> Function({
+    required CrewMemberRepository crewMemberRepository,
+  })
+      builder,
+) async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
 
   EquatableConfig.stringify = true;
 
+  final crewMemberRepository = CrewMemberRepository();
+
   await runZonedGuarded(
     () async {
       await BlocOverrides.runZoned(
-        () async => runApp(await builder()),
+        () async => runApp(
+          await builder(
+            crewMemberRepository: crewMemberRepository,
+          ),
+        ),
         blocObserver: AppBlocObserver(),
       );
     },

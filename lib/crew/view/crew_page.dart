@@ -1,3 +1,4 @@
+import 'package:crew_member_repository/crew_member_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spacex_demo/crew/crew.dart';
@@ -15,7 +16,8 @@ class CrewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CrewCubit()..fetchAllCrewMembers(),
+      create: (context) => CrewCubit(context.read<CrewMemberRepository>())
+        ..fetchAllCrewMembers(),
       child: const CrewPageView(),
     );
   }

@@ -5,9 +5,17 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+import 'package:crew_member_repository/crew_member_repository.dart';
 import 'package:spacex_demo/app/app.dart';
 import 'package:spacex_demo/bootstrap.dart';
 
 void main() {
-  bootstrap(() => const App());
+  bootstrap(
+    ({
+      required CrewMemberRepository crewMemberRepository,
+    }) =>
+        App(
+      crewMemberRepository: crewMemberRepository,
+    ),
+  );
 }
