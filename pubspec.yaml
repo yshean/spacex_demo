@@ -10,6 +10,7 @@ dependencies:
   bloc: ^8.0.3
   crew_member_repository:
     path: packages/crew_member_repository
+  equatable: ^2.0.3
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1

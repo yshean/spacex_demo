@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spacex_demo/crew/crew.dart';
 import 'package:spacex_demo/l10n/l10n.dart';
 
@@ -9,8 +10,7 @@ class CrewPageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    // TODO(yshean): get the status from the cubit state
-    final status = CrewStatus.initial;
+    final status = context.select((CrewCubit cubit) => cubit.state.status);
 
     switch (status) {
       case CrewStatus.initial:
