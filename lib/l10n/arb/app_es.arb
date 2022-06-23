@@ -1,9 +1,5 @@
 {
     "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
-    },
     "homeAppBarTitle": "SpaceX Demo (ES)",
     "@homeAppBarTitle": {
       "description": "Text shown in the AppBar of the Home Page"
@@ -23,5 +19,25 @@
     "crewFetchErrorMessage": "Something went wrong while fetching crew members. Please try again later. (ES)",
     "@crewFetchErrorMessage": {
       "description": "Error text shown on the Home Page when an error occurred while fetching crew members."
+    },
+    "openWikipediaButtonText": "Open Wikipedia (ES)",
+    "@openWikipediaButtonText": {
+      "description": "Button text shown on the Rocket Details Page that opens the corresponding Wikipedia page."
+    },
+    "crewMemberDetailsAgency": "Agency (ES)",
+    "@crewMemberDetailsAgency": {
+      "description": "Prefix word placed in the 1st subtitle of the crew member details page"
+    },
+    "crewMemberDetailsParticipatedLaunches": "Has participated in (ES)",
+    "@crewMemberDetailsParticipatedLaunches": {
+      "description": "Prefix text placed in the 2nd subtitle of the crew member details page"
+    },
+    "crewMemberDetailsLaunch": "launch (ES)",
+    "@crewMemberDetailsLaunch": {
+      "description": "Singular suffix word placed in the 2nd subtitle of the crew member details page"
+    },
+    "crewMemberDetailsLaunches": "launches (ES)",
+    "@crewMemberDetailsLaunches": {
+      "description": "Plural suffix word placed in the 2nd subtitle of the crew member details page"
     }
 }

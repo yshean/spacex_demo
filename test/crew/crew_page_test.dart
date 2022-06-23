@@ -7,6 +7,7 @@ import 'package:mocktail_image_network/mocktail_image_network.dart';
 import 'package:spacex_api/spacex_api.dart';
 import 'package:spacex_demo/crew/crew.dart';
 import 'package:spacex_demo/crew/cubit/crew_cubit.dart';
+import 'package:spacex_demo/crew_member_details/crew_member_details.dart';
 
 import '../helpers/helpers.dart';
 
@@ -179,10 +180,15 @@ void main() {
 
         await tester.tap(find.text(crewMembers.first.name));
 
-        // TODO(yshean): enable this test after being able to navigate to CrewMemberDetailsPage
-        // verify(
-        //   () => navigator.push(any(that: isRoute<void>())),
-        // ).called(1);
+        verify(
+          () => navigator.push<void>(
+            any(
+              that: isRoute<void>(
+                whereName: equals(CrewMemberDetailsPage.routeName),
+              ),
+            ),
+          ),
+        ).called(1);
       },
     );
   });

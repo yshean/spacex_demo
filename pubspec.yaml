@@ -23,6 +23,7 @@ dependencies:
     path: packages/spacex_api
   spacex_ui:
     path: packages/spacex_ui
+  url_launcher: ^6.1.4
 
 dev_dependencies:
   bloc_test: ^9.0.3

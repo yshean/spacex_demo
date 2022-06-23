@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spacex_demo/crew/cubit/crew_cubit.dart';
+import 'package:spacex_demo/crew_member_details/crew_member_details.dart';
 
 class CrewMembersList extends StatelessWidget {
   const CrewMembersList({super.key});
@@ -16,10 +17,9 @@ class CrewMembersList extends StatelessWidget {
           ListTile(
             isThreeLine: true,
             onTap: () {
-              // TODO(yshean): navigate to CrewMemberDetailsPage
-              // Navigator.of(context).push(
-              //   CrewMemberDetailsPage.route(crewMember: crewMember),
-              // );
+              Navigator.of(context).push<void>(
+                CrewMemberDetailsPage.route(crewMember: crewMember),
+              );
             },
             leading: CircleAvatar(
               backgroundImage: NetworkImage(crewMember.image),
