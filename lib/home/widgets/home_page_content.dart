@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spacex_demo/crew/crew.dart';
 import 'package:spacex_demo/home/home.dart';
 import 'package:spacex_demo/l10n/l10n.dart';
 
@@ -39,8 +40,7 @@ class HomePageContent extends StatelessWidget {
               ),
               child: SpaceXCategoryCard(
                 key: const Key('homePageContent_crew_spaceXCategoryCard'),
-                // TODO(yshean): onTap needs to do () => Navigator.of(context).push(CrewPage.route())
-                onTap: () {},
+                onTap: () => Navigator.of(context).push(CrewPage.route()),
                 title: Text(l10n.crewSpaceXTileTitle),
                 assetImage: const AssetImage(
                   'assets/images/img_spacex_crew.jpeg',

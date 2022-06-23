@@ -5,6 +5,12 @@ import 'package:spacex_demo/l10n/l10n.dart';
 class CrewPage extends StatelessWidget {
   const CrewPage({super.key});
 
+  static Route<CrewPage> route() {
+    return MaterialPageRoute(
+      builder: (context) => const CrewPage(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
