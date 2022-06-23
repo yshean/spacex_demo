@@ -15,7 +15,7 @@ class CrewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CrewCubit(),
+      create: (context) => CrewCubit()..fetchAllCrewMembers(),
       child: const CrewPageView(),
     );
   }
