@@ -19,5 +19,9 @@
   "crewAppBarTitle": "Crew",
   "@crewAppBarTitle": {
     "description": "Text shown in the AppBar of the Crew Page"
+  },
+  "crewFetchErrorMessage": "Something went wrong while fetching crew members. Please try again later.",
+  "@crewFetchErrorMessage": {
+    "description": "Error text shown on the Home Page when an error occurred while fetching crew members."
   }
 }
