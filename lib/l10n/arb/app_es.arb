@@ -15,5 +15,9 @@
     "crewSpaceXTileTitle": "Crew (ES)",
     "@crewSpaceXTileTitle": {
       "description": "Text included as title on the crew tile on the home page"
+    },
+    "crewAppBarTitle": "Crew (ES)",
+    "@crewAppBarTitle": {
+      "description": "Text shown in the AppBar of the Crew Page"
     }
 }
