@@ -8,9 +8,12 @@ import 'package:spacex_demo/l10n/l10n.dart';
 class CrewPage extends StatelessWidget {
   const CrewPage({super.key});
 
-  static Route<CrewPage> route() {
+  static String get routeName => '/crews';
+
+  static Route<void> route() {
     return MaterialPageRoute(
       builder: (context) => const CrewPage(),
+      settings: RouteSettings(name: CrewPage.routeName),
     );
   }
 

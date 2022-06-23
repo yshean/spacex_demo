@@ -40,7 +40,7 @@ class HomePageContent extends StatelessWidget {
               ),
               child: SpaceXCategoryCard(
                 key: const Key('homePageContent_crew_spaceXCategoryCard'),
-                onTap: () => Navigator.of(context).push(CrewPage.route()),
+                onTap: () => Navigator.of(context).push<void>(CrewPage.route()),
                 title: Text(l10n.crewSpaceXTileTitle),
                 assetImage: const AssetImage(
                   'assets/images/img_spacex_crew.jpeg',
