@@ -13,6 +13,7 @@ void main() {
   group('CrewPageView', () {
     late CrewCubit crewCubit;
     late MockNavigator navigator;
+    late Widget app;
 
     setUp(() {
       crewCubit = MockCrewCubit();
@@ -20,6 +21,11 @@ void main() {
 
       when(() => navigator.push<void>(any(that: isRoute<void>())))
           .thenAnswer((_) async {});
+
+      app = BlocProvider.value(
+        value: crewCubit,
+        child: const CrewView(),
+      );
     });
 
     setUpAll(() {
@@ -34,12 +40,7 @@ void main() {
         const CrewState(),
       );
 
-      await tester.pumpApp(
-        BlocProvider.value(
-          value: crewCubit,
-          child: const CrewView(),
-        ),
-      );
+      await tester.pumpApp(app);
 
       expect(find.byKey(key), findsOneWidget);
     });
@@ -55,12 +56,7 @@ void main() {
           ),
         );
 
-        await tester.pumpApp(
-          BlocProvider.value(
-            value: crewCubit,
-            child: const CrewView(),
-          ),
-        );
+        await tester.pumpApp(app);
 
         expect(find.byKey(key), findsOneWidget);
       },
@@ -77,12 +73,7 @@ void main() {
           ),
         );
 
-        await tester.pumpApp(
-          BlocProvider.value(
-            value: crewCubit,
-            child: const CrewView(),
-          ),
-        );
+        await tester.pumpApp(app);
 
         expect(find.byKey(key), findsOneWidget);
       },
@@ -101,12 +92,7 @@ void main() {
         );
 
         await mockNetworkImages(() async {
-          await tester.pumpApp(
-            BlocProvider.value(
-              value: crewCubit,
-              child: const CrewView(),
-            ),
-          );
+          await tester.pumpApp(app);
         });
 
         expect(find.byKey(key), findsOneWidget);
