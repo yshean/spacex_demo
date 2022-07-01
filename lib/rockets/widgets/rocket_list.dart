@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:spacex_api/spacex_api.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spacex_demo/rocket_details/rocket_details.dart';
+import 'package:spacex_demo/rockets/cubit/rockets_cubit.dart';
 
 /// Show the fetched rockets list based on the fetch status
 class RocketList extends StatelessWidget {
@@ -8,21 +9,8 @@ class RocketList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(you): Get the rockets from the RocketsCubit
-    final rockets = [
-      Rocket(
-        id: '0',
-        name: 'mock-rocket-name',
-        description: 'mock-rocket-description',
-        height: const Length(meters: 1, feet: 1),
-        diameter: const Length(meters: 1, feet: 1),
-        mass: const Mass(kg: 1, lb: 1),
-        flickrImages: const ['https://example.com/'],
-        active: true,
-        firstFlight: DateTime(2021, 12, 31),
-        wikipedia: 'https://wikipedia.com/',
-      ),
-    ];
+    final rockets =
+        context.select((RocketsCubit cubit) => cubit.state.rockets!);
 
     return ListView(
       children: [

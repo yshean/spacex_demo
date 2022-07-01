@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rocket_repository/rocket_repository.dart';
 import 'package:spacex_demo/l10n/l10n.dart';
+import 'package:spacex_demo/rockets/cubit/rockets_cubit.dart';
 import 'package:spacex_demo/rockets/widgets/widgets.dart';
 
 class RocketsPage extends StatelessWidget {
@@ -16,9 +19,12 @@ class RocketsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(you): wrap this with BlocProvider that supplies RocketsCubit
-    // remember to fetch your rockets too!
-    return const RocketsView();
+    return BlocProvider(
+      create: (context) =>
+          RocketsCubit(rocketRepository: context.read<RocketRepository>())
+            ..fetchAllRockets(),
+      child: const RocketsView(),
+    );
   }
 }
 
