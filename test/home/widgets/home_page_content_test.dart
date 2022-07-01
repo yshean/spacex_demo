@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockingjay/mockingjay.dart';
 import 'package:spacex_demo/crew/crew.dart';
 import 'package:spacex_demo/home/widgets/widgets.dart';
+import 'package:spacex_demo/rockets/rockets.dart';
 
 import '../../helpers/pump_app.dart';
 
@@ -70,6 +71,27 @@ void main() {
       },
     );
 
-    // TODO(you): test navigation to RocketsPage
+    testWidgets(
+      'navigates to RocketsPage '
+      'when rocket category card is tapped',
+      (tester) async {
+        await tester.pumpApp(
+          const HomePageContent(),
+          navigator: navigator,
+        );
+
+        await tester.tap(
+          find.byKey(
+            const Key('homePageContent_rocket_spaceXCategoryCard'),
+          ),
+        );
+
+        verify(
+          () => navigator.push<void>(
+            any(that: isRoute<void>(whereName: equals(RocketsPage.routeName))),
+          ),
+        ).called(1);
+      },
+    );
   });
 }

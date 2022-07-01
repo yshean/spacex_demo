@@ -9,7 +9,8 @@ import 'package:url_launcher/url_launcher.dart';
 class CrewMemberDetailsPage extends StatelessWidget {
   const CrewMemberDetailsPage({super.key});
 
-  static String get routeName => '/crews';
+  static String routeName({required CrewMember crewMember}) =>
+      '/crew/${crewMember.id}';
 
   static Route<void> route({required CrewMember crewMember}) {
     return MaterialPageRoute(
@@ -17,7 +18,9 @@ class CrewMemberDetailsPage extends StatelessWidget {
         create: (_) => CrewMemberDetailsCubit(crewMember: crewMember),
         child: const CrewMemberDetailsPage(),
       ),
-      settings: RouteSettings(name: CrewMemberDetailsPage.routeName),
+      settings: RouteSettings(
+        name: CrewMemberDetailsPage.routeName(crewMember: crewMember),
+      ),
     );
   }
 

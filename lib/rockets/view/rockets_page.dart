@@ -16,6 +16,8 @@ class RocketsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO(you): wrap this with BlocProvider that supplies RocketsCubit
+    // remember to fetch your rockets too!
     return const RocketsView();
   }
 }

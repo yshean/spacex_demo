@@ -11,7 +11,7 @@ class RocketsPageContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     // TODO(you): Get the status from the RocketsCubit
-    const status = RocketStatus.initial;
+    const status = RocketStatus.success;
 
     switch (status) {
       case RocketStatus.initial:

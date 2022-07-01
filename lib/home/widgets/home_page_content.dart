@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spacex_demo/crew/crew.dart';
 import 'package:spacex_demo/home/widgets/widgets.dart';
 import 'package:spacex_demo/l10n/l10n.dart';
+import 'package:spacex_demo/rockets/rockets.dart';
 
 class HomePageContent extends StatelessWidget {
   const HomePageContent({super.key});
@@ -22,9 +23,7 @@ class HomePageContent extends StatelessWidget {
               ),
               child: SpaceXCategoryCard(
                 key: const Key('homePageContent_rocket_spaceXCategoryCard'),
-                // TODO(you): add navigation to RocketsPage
-                // onTap: () => Navigator.of(context).push(RocketsPage.route())
-                onTap: () {},
+                onTap: () => Navigator.of(context).push(RocketsPage.route()),
                 title: Text(l10n.rocketSpaceXTileTitle),
                 assetImage: const AssetImage(
                   'assets/images/img_spacex_rocket.jpeg',
