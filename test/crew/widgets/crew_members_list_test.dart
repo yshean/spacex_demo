@@ -51,7 +51,9 @@ void main() {
         () => navigator.push<void>(
           any(
             that: isRoute<void>(
-              whereName: equals(CrewMemberDetailsPage.routeName),
+              whereName: equals(
+                CrewMemberDetailsPage.routeName(crewMember: crewMembers.first),
+              ),
             ),
           ),
         ),

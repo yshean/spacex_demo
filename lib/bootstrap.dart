@@ -12,6 +12,7 @@ import 'package:bloc/bloc.dart';
 import 'package:crew_member_repository/crew_member_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
+import 'package:rocket_repository/rocket_repository.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
@@ -30,6 +31,7 @@ class AppBlocObserver extends BlocObserver {
 Future<void> bootstrap(
   FutureOr<Widget> Function({
     required CrewMemberRepository crewMemberRepository,
+    required RocketRepository rocketRepository,
   })
       builder,
 ) async {
@@ -40,6 +42,7 @@ Future<void> bootstrap(
   EquatableConfig.stringify = true;
 
   final crewMemberRepository = CrewMemberRepository();
+  final rocketRepository = RocketRepository();
 
   await runZonedGuarded(
     () async {
@@ -47,6 +50,7 @@ Future<void> bootstrap(
         () async => runApp(
           await builder(
             crewMemberRepository: crewMemberRepository,
+            rocketRepository: rocketRepository,
           ),
         ),
         blocObserver: AppBlocObserver(),

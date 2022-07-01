@@ -11,24 +11,24 @@ class RocketsPageContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     // TODO(you): Get the status from the RocketsCubit
-    const status = RocketStatus.success;
+    const status = RocketsStatus.success;
 
     switch (status) {
-      case RocketStatus.initial:
+      case RocketsStatus.initial:
         return const SizedBox(
           key: Key('rocketsView_initial_sizedBox'),
         );
-      case RocketStatus.loading:
+      case RocketsStatus.loading:
         return const Center(
           key: Key('rocketsView_loading_indicator'),
           child: CircularProgressIndicator.adaptive(),
         );
-      case RocketStatus.failure:
+      case RocketsStatus.failure:
         return Center(
           key: const Key('rocketsView_failure_text'),
           child: Text(l10n.rocketsFetchErrorMessage),
         );
-      case RocketStatus.success:
+      case RocketsStatus.success:
         return const RocketList(
           key: Key('rocketsView_success_rocketList'),
         );
