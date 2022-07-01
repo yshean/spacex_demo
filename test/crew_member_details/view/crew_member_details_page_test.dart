@@ -13,6 +13,7 @@ import '../../helpers/helpers.dart';
 void main() {
   late CrewMemberDetailsCubit crewMemberDetailsCubit;
   late UrlLauncherPlatform urlLauncherPlatform;
+  late Widget app;
 
   const crewMember = CrewMember(
     id: '0',
@@ -35,6 +36,10 @@ void main() {
     when(
       () => urlLauncherPlatform.launchUrl(any(), any()),
     ).thenAnswer((_) async => true);
+    app = BlocProvider.value(
+      value: crewMemberDetailsCubit,
+      child: const CrewMemberDetailsView(),
+    );
   });
 
   setUpAll(() {
@@ -69,118 +74,26 @@ void main() {
   });
 
   group('CrewMemberDetailsView', () {
-    testWidgets('renders crew member image', (tester) async {
+    testWidgets('renders crew member image header', (tester) async {
       const key = Key('crewMemberDetailsPage_imageHeader');
 
       await mockNetworkImages(() async {
-        await tester.pumpApp(
-          BlocProvider.value(
-            value: crewMemberDetailsCubit,
-            child: const CrewMemberDetailsView(),
-          ),
-        );
+        await tester.pumpApp(app);
       });
 
       expect(find.byKey(key), findsOneWidget);
     });
 
-    group('title header', () {
-      testWidgets(
-        'renders check icon when crew member is active',
-        (tester) async {
-          await mockNetworkImages(() async {
-            await tester.pumpApp(
-              BlocProvider.value(
-                value: crewMemberDetailsCubit,
-                child: const CrewMemberDetailsView(),
-              ),
-            );
-          });
+    testWidgets('renders crew member title header', (tester) async {
+      const key = Key('crewMemberDetailsPage_titleHeader');
 
-          expect(find.byIcon(Icons.check), findsOneWidget);
-        },
-      );
-
-      testWidgets(
-        'renders cross icon when crew member is inactive',
-        (tester) async {
-          when(() => crewMemberDetailsCubit.state).thenReturn(
-            const CrewMemberDetailsState(
-              crewMember: CrewMember(
-                id: '0',
-                name: 'Alejandro Ferrero',
-                status: 'inactive',
-                agency: 'Very Good Aliens',
-                image:
-                    'https://media-exp1.licdn.com/dms/image/C4D03AQHVNIVOMkwQaA/profile-displayphoto-shrink_200_200/0/1631637257882?e=1637193600&v=beta&t=jFm-Ckb0KS0Z5hJDbo3ZBSEZSYLHfllUf4N-IV2NDTc',
-                wikipedia: 'https://www.wikipedia.org/',
-                launches: ['Launch 1'],
-              ),
-            ),
-          );
-
-          await mockNetworkImages(() async {
-            await tester.pumpApp(
-              BlocProvider.value(
-                value: crewMemberDetailsCubit,
-                child: const CrewMemberDetailsView(),
-              ),
-            );
-          });
-
-          expect(find.byIcon(Icons.close), findsOneWidget);
-        },
-      );
-
-      testWidgets('renders agency subtitle', (tester) async {
-        const agencyKey =
-            Key('crewMemberDetailsPage_titleHeader_agencyRichText');
-
-        await mockNetworkImages(() async {
-          await tester.pumpApp(
-            BlocProvider.value(
-              value: crewMemberDetailsCubit,
-              child: const CrewMemberDetailsView(),
-            ),
-          );
-        });
-
-        expect(
-          find.byWidgetPredicate(
-            (Widget widget) =>
-                widget is RichText &&
-                widget.key == agencyKey &&
-                widget.text.toPlainText() == 'Agency: ${crewMember.agency}',
-          ),
-          findsOneWidget,
-        );
+      await mockNetworkImages(() async {
+        await tester.pumpApp(app);
       });
 
-      testWidgets('renders launch subtitle', (tester) async {
-        const launchKey =
-            Key('crewMemberDetailsPage_titleHeader_launchRichText');
-
-        await mockNetworkImages(() async {
-          await tester.pumpApp(
-            BlocProvider.value(
-              value: crewMemberDetailsCubit,
-              child: const CrewMemberDetailsView(),
-            ),
-          );
-        });
-
-        expect(
-          find.byWidgetPredicate(
-            (Widget widget) =>
-                widget is RichText &&
-                widget.key == launchKey &&
-                widget.text.toPlainText() ==
-                    'Has participated in ${crewMember.launches.length} launch',
-          ),
-          findsOneWidget,
-        );
-      });
+      expect(find.byKey(key), findsOneWidget);
     });
+
     group('open wikipedia button', () {
       const key = Key('crewMemberDetailsPage_openWikipedia_elevatedButton');
 
@@ -188,12 +101,7 @@ void main() {
         'is rendered',
         (tester) async {
           await mockNetworkImages(() async {
-            await tester.pumpApp(
-              BlocProvider.value(
-                value: crewMemberDetailsCubit,
-                child: const CrewMemberDetailsView(),
-              ),
-            );
+            await tester.pumpApp(app);
           });
 
           expect(find.byKey(key), findsOneWidget);
@@ -204,12 +112,7 @@ void main() {
         'attempts to open wikipedia url when pressed',
         (tester) async {
           await mockNetworkImages(() async {
-            await tester.pumpApp(
-              BlocProvider.value(
-                value: crewMemberDetailsCubit,
-                child: const CrewMemberDetailsView(),
-              ),
-            );
+            await tester.pumpApp(app);
           });
 
           await tester.tap(find.byKey(key));

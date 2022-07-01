@@ -9,7 +9,7 @@ import 'package:spacex_demo/crew/crew.dart';
 import 'package:spacex_demo/crew/cubit/crew_cubit.dart';
 import 'package:spacex_demo/crew_member_details/crew_member_details.dart';
 
-import '../helpers/helpers.dart';
+import '../../helpers/helpers.dart';
 
 void main() {
   final crewMembers = List.generate(

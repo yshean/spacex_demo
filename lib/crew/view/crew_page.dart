@@ -5,6 +5,8 @@ import 'package:spacex_demo/crew/cubit/crew_cubit.dart';
 import 'package:spacex_demo/crew/widgets/widgets.dart';
 import 'package:spacex_demo/l10n/l10n.dart';
 
+/// Page level: You have the BlocProvider, and the route definition
+/// When testing, we usually test the child (below the BlocProvider)
 class CrewPage extends StatelessWidget {
   const CrewPage({super.key});
 
