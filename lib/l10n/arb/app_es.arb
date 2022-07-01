@@ -39,5 +39,22 @@
     "crewMemberDetailsLaunches": "launches (ES)",
     "@crewMemberDetailsLaunches": {
       "description": "Plural suffix word placed in the 2nd subtitle of the crew member details page"
+    },
+    "rocketsAppBarTitle": "Rockets (ES)",
+    "@rocketsAppBarTitle": {
+      "description": "Text shown in the AppBar of the Rockets Page"
+    },
+    "rocketsFetchErrorMessage": "Something went wrong while fetching rockets. Please try again later. (ES)",
+    "@rocketsFetchErrorMessage": {
+      "description": "Error text shown on the Rockets Page when an error occurred while fetching rockets."
+    },
+    "rocketDetailsFirstFlightSubtitle": "First launch: {date} (ES)",
+    "@rocketDetailsFirstFlightSubtitle": {
+      "description": "Subtitle text shown on the Rocket Details Page that indicates when a rocket was or will be launched.",
+      "placeholders": {
+        "date": {
+          "example": "31-12-2021"
+        }
+      }
     }
 }

@@ -22,7 +22,7 @@ class HomePageContent extends StatelessWidget {
               ),
               child: SpaceXCategoryCard(
                 key: const Key('homePageContent_rocket_spaceXCategoryCard'),
-                // TODO(yshean): add navigation to RocketsPage
+                // TODO(you): add navigation to RocketsPage
                 // onTap: () => Navigator.of(context).push(RocketsPage.route())
                 onTap: () {},
                 title: Text(l10n.rocketSpaceXTileTitle),
