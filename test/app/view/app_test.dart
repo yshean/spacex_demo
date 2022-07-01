@@ -7,15 +7,18 @@
 
 import 'package:crew_member_repository/crew_member_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:rocket_repository/rocket_repository.dart';
 import 'package:spacex_demo/app/app.dart';
 
 import '../../helpers/helpers.dart';
 
 void main() {
   late CrewMemberRepository crewMemberRepository;
+  late RocketRepository rocketRepository;
 
   setUp(() {
     crewMemberRepository = MockCrewMemberRepository();
+    rocketRepository = MockRocketRepository();
   });
 
   group('App', () {
@@ -23,6 +26,7 @@ void main() {
       await tester.pumpWidget(
         App(
           crewMemberRepository: crewMemberRepository,
+          rocketRepository: rocketRepository,
         ),
       );
       expect(find.byType(AppView), findsOneWidget);
@@ -34,6 +38,7 @@ void main() {
       await tester.pumpWidget(
         App(
           crewMemberRepository: crewMemberRepository,
+          rocketRepository: rocketRepository,
         ),
       );
       expect(find.byType(AppView), findsOneWidget);

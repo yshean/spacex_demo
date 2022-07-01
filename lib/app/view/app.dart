@@ -9,6 +9,7 @@ import 'package:crew_member_repository/crew_member_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:rocket_repository/rocket_repository.dart';
 import 'package:spacex_demo/home/home.dart';
 import 'package:spacex_demo/l10n/l10n.dart';
 import 'package:spacex_ui/spacex_ui.dart';
@@ -17,14 +18,23 @@ class App extends StatelessWidget {
   const App({
     super.key,
     required this.crewMemberRepository,
+    required this.rocketRepository,
   });
 
   final CrewMemberRepository crewMemberRepository;
+  final RocketRepository rocketRepository;
 
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider.value(
-      value: crewMemberRepository,
+    return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider.value(
+          value: crewMemberRepository,
+        ),
+        RepositoryProvider.value(
+          value: rocketRepository,
+        ),
+      ],
       child: const AppView(),
     );
   }
