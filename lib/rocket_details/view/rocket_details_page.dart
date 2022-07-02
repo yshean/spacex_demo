@@ -7,7 +7,7 @@ import 'package:spacex_demo/rocket_details/widgets/widgets.dart';
 class RocketDetailsPage extends StatelessWidget {
   const RocketDetailsPage({super.key});
 
-  static String routeName({required Rocket rocket}) => '/rockets/${rocket.id}';
+  static String routeName({required Rocket rocket}) => '/rocket/${rocket.id}';
 
   static Route<void> route({required Rocket rocket}) {
     return MaterialPageRoute(
