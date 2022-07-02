@@ -29,11 +29,12 @@ class RocketsCubit extends Cubit<RocketsState> {
           rockets: rockets,
         ),
       );
-    } on Exception {
+    } on Exception catch (e) {
       emit(
         RocketsState(
           status: RocketsStatus.failure,
           rockets: state.rockets,
+          errorMessage: e.toString(),
         ),
       );
     }
